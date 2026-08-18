@@ -1,4 +1,5 @@
 import { getUserActivity } from "./github.js";
+import { formatEvent } from "./formatter.js";
 
 async function main() {
     const username = process.argv[2];
@@ -9,11 +10,13 @@ async function main() {
     }
 
     try {
-        console.log(`Fetching activity for: ${username}`);
+        console.log(`Recent activity for ${username}:\n`);
 
         const activity = await getUserActivity(username);
 
-        console.log(activity);
+        for (const event of activity) {
+            console.log(`- ${formatEvent(event)}`);
+        }
     } catch (error) {
         console.error("Error:", (error as Error).message);
         process.exit(1);
