@@ -1,0 +1,17 @@
+{
+  "name": "gitrack",
+  "version": "1.0.0",
+  "description": "GitHub user activity CLI",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}
